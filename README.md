@@ -1,4 +1,4 @@
-# Smartcard SSH Tools
+# Yubikey SSH Tools
 
 ## What
 
@@ -11,7 +11,7 @@ There is already a [guide](https://developers.yubico.com/PIV/Guides/SSH_with_PIV
 
 ## How to Use
 
-ykutil.sh is a shell script to setup a PIN and initialize a certificate for use with the PIV personality of a yubikey. 
+ykutil.sh is a shell script to setup a PIN and initialize a certificate for use with the PIV personality of a yubikey.
 
 ```
  $ ykutil.sh --help
