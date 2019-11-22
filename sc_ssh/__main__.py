@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """ uses the SmartCardSSH class to add/remove pkcs11 devices from ssh-agent """
 
 import argparse
@@ -13,22 +11,18 @@ def parseargs():
 
     args = None
     parser = argparse.ArgumentParser(description="Script to load and unload a pkcs11 token",
-                                     formatter_class=argparse.RawTextHelpFormatter
-    )
+                                     formatter_class=argparse.RawTextHelpFormatter)
 
     parser.add_argument('-l',
                         action='store',
                         dest='pkcs11_path',
                         default='/usr/local/lib/opensc-pkcs11.so',
-                        help='path to pkcs11.so file.\n'
-                             '  (default: %(default)s)')
-                        
+                        help='path to pkcs11.so file.\n  (default: %(default)s)')
+
     subcommand_parser = parser.add_subparsers(dest='subcommand')
 
-    add_parser = subcommand_parser.add_parser('add',
-                                       help='Add smartcard to ssh-agent')
-    del_parser = subcommand_parser.add_parser('del',
-                                       help='Remove smartcard from ssh-agent')
+    subcommand_parser.add_parser('add', help='Add smartcard to ssh-agent')
+    subcommand_parser.add_parser('del', help='Remove smartcard from ssh-agent')
 
     args = parser.parse_args()
     return args
